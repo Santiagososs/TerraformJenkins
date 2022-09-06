@@ -15,8 +15,8 @@ resource "azurerm_resource_group" "rg-terraform" {
   name     = "rg-terraform"
   location = "southcentralus"
   tags = {
-    enviroment = "dev"
-    source     = "terraform"
+    enviroment = "Dev"
+    source     = "Terraform"
     owner      = "Henry"
     Builder    = "Jenkins"
   }
