@@ -18,6 +18,6 @@ resource "azurerm_resource_group" "rg-terraform" {
     enviroment = "Dev"
     source     = "Terraform"
     owner      = "Henry"
-    Builder    = "Jenkins"
+    Builder    = "Jenkins Webhook"
   }
 }
