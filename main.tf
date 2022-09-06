@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "rg-terraform" {
   tags = {
     enviroment = "dev"
     source     = "terraform"
-    owner      = "Henry G C S"
+    owner      = "Henry"
     Builder    = "Jenkins"
   }
 }
