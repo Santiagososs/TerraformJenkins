@@ -69,7 +69,7 @@ resource "azurerm_linux_virtual_machine" "terraform_linux_machine" {
   location            = azurerm_resource_group.terraform_group.location
   size                = "Standard_F1"
   admin_username      = "adminuser"
-  admin_password = "92414244"
+  admin_password = "ASDFasdf@#13"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.terraform_net_interface.id,
