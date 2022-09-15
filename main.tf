@@ -47,6 +47,17 @@ resource "azurerm_network_interface" "terraform_net_interface" {
   }
 }
 
+resource "azurerm_public_ip" "terraform_public_ip" {
+  name                = "terraform-public-ip"
+  resource_group_name = azurerm_resource_group.terraform_group.name
+  location            = azurerm_resource_group.terraform_group.location
+  allocation_method   = "Static"
+
+  tags = {
+    environment = "Production"
+  }
+}
+
 resource "tls_private_key" "example_ssh" {
   algorithm = "RSA"
   rsa_bits  = 4096
@@ -58,9 +69,12 @@ resource "azurerm_linux_virtual_machine" "terraform_linux_machine" {
   location            = azurerm_resource_group.terraform_group.location
   size                = "Standard_F1"
   admin_username      = "adminuser"
+  admin_password = "92414244"
+  disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.terraform_net_interface.id,
   ]
+
 
   os_disk {
     caching              = "ReadWrite"
