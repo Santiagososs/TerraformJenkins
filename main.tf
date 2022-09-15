@@ -41,9 +41,11 @@ resource "azurerm_network_interface" "terraform_net_interface" {
   resource_group_name = azurerm_resource_group.terraform_group.name
 
   ip_configuration {
+    primary                       = true
     name                          = "internal"
     subnet_id                     = azurerm_subnet.terraform_subnet.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = "Dynamic"
   }
 }
 
