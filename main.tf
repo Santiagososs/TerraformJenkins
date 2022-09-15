@@ -48,7 +48,7 @@ resource "azurerm_network_interface" "terraform_net_interface" {
 }
 
 resource "azurerm_linux_virtual_machine" "terraform_linux_machine" {
-  name                = "terraform_linux_machine"
+  name                = "terraformlinuxmachine"
   resource_group_name = azurerm_resource_group.terraform_group.name
   location            = azurerm_resource_group.terraform_group.location
   size                = "Standard_F1"
